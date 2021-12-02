@@ -1,5 +1,7 @@
 package pgdp.collections;
 
+import java.util.List;
+
 public interface Queue extends DataStructure{
     @Override
     int size();
@@ -7,6 +9,6 @@ public interface Queue extends DataStructure{
     @Override
     boolean isEmpty();
 
-    void enqueue();
+    List enqueue();
     void dequeue();
 }

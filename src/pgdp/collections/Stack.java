@@ -9,6 +9,6 @@ public interface Stack extends DataStructure{
     @Override
     boolean isEmpty();
 
-    void push();
+    List push();
     void pop();
 }
