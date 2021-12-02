@@ -2,10 +2,10 @@ package pgdp.collections;
 
 public interface Queue extends DataStructure{
     @Override
-    void size();
+    int size();
 
     @Override
-    void isEmpty();
+    boolean isEmpty();
 
     void enqueue();
     void dequeue();

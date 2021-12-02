@@ -1,11 +1,13 @@
 package pgdp.collections;
 
+import java.lang.reflect.Type;
+
 public interface Stack extends DataStructure{
     @Override
-    void size();
+    int size();
 
     @Override
-    void isEmpty();
+    boolean isEmpty();
 
     void push();
     void pop();
