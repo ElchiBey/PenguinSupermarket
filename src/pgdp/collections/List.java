@@ -1,7 +1,7 @@
 package pgdp.collections;
 
 public class List<T> {
-    private T info;
+    private final T info;
     private List<T> next;
 
     public List(T x) {
@@ -36,5 +36,17 @@ public class List<T> {
         for (List<T> t = next; t != null; t = t.next)
             result = result + ", " + t.info;
         return result + "]";
+    }
+
+    public List<T> getNext() {
+        return next;
+    }
+
+    public T getInfo() {
+        return info;
+    }
+
+    public void setNext(List<T> next) {
+        this.next = next;
     }
 }
