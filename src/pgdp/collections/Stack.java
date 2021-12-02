@@ -2,13 +2,7 @@ package pgdp.collections;
 
 import java.lang.reflect.Type;
 
-public interface Stack extends DataStructure{
-    @Override
-    int size();
-
-    @Override
-    boolean isEmpty();
-
-    List push();
-    void pop();
+public interface Stack<T> extends DataStructure{
+    void push(T bolo);
+    T pop();
 }
