@@ -3,11 +3,13 @@ package pgdp.collections;
 public class LinkedStack<T> implements Stack<T>{
 
     private List<T> next;
-    private final T info;
 
-    public LinkedStack(T info) {
-        this.info = info;
+    public LinkedStack() {
         next = null;
+    }
+
+    public LinkedStack(List<T> next){
+        this.next = next;
     }
 
     public List<T> getNext() {
@@ -34,6 +36,7 @@ public class LinkedStack<T> implements Stack<T>{
 
     @Override
     public T pop() {
+        if(next==null) return null;
         T result = next.getInfo();
         next = next.getNext();
         return result;
