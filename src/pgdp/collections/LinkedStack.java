@@ -2,18 +2,12 @@ package pgdp.collections;
 
 public class LinkedStack<T> implements Stack<T>{
 
-    private final T info;
     private List<T> next;
 
-    public LinkedStack(T info, List<T> next) {
-        this.info = info;
-        this.next = next;
+    public LinkedStack(Object o) {
+        this.next = null;
     }
 
-
-    public T getInfo() {
-        return info;
-    }
 
     public List<T> getNext() {
         return next;
@@ -29,7 +23,7 @@ public class LinkedStack<T> implements Stack<T>{
 
     @Override
     public boolean isEmpty() {
-        return (info==null);
+        return (next==null);
     }
 
     @Override
@@ -55,5 +49,12 @@ public class LinkedStack<T> implements Stack<T>{
 //                "info=" + info +
 //                ", next=" + next +
 //                '}';
+//    }
+
+//    public String toString() {
+//        StringBuilder result = new StringBuilder("[");
+//        for (List<T> t = next; t != null; t = t.getNext())
+//            result.append(", ").append(t.getInfo());
+//        return result + "]";
 //    }
 }
