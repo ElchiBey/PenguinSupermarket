@@ -4,8 +4,7 @@ public class LinkedStack<T> implements Stack<T>{
 
     private List<T> next;
 
-    public LinkedStack() {
-        next = null;
+    public LinkedStack(List<T> next) {
     }
 
     public List<T> getNext() {
