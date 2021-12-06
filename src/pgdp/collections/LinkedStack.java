@@ -49,11 +49,11 @@ public class LinkedStack<T> implements Stack<T>{
 //    }
 
 
-    @Override
-    public String toString() {
-        return "LinkedStack{" +
-                "info=" + info +
-                ", next=" + next +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "LinkedStack{" +
+//                "info=" + info +
+//                ", next=" + next +
+//                '}';
+//    }
 }
