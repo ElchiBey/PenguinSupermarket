@@ -46,7 +46,6 @@ public class LinkedStack<T> implements Stack<T>{
 //        return next.toString();
 //    }
 
-
 //    @Override
 //    public String toString() {
 //        return "LinkedStack{" +
