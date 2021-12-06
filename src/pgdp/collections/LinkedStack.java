@@ -8,14 +8,13 @@ public class LinkedStack<T> implements Stack<T>{
         next = null;
     }
 
-
     public List<T> getNext() {
         return next;
     }
 
     @Override
     public int size() {
-        int result = 1;
+        int result = 0;
         for(List<T> t=next; t!=null; t=t.getNext())
             result++;
         return result;
@@ -40,28 +39,5 @@ public class LinkedStack<T> implements Stack<T>{
 
 //    public String toString(){
 //        return next.toString();
-//    }
-
-
-//    @Override
-//    public String toString() {
-//        return "LinkedStack{" +
-//                "info=" + info +
-//                ", next=" + next +
-//                '}';
-//    }
-
-//    public String toString() {
-//        StringBuilder result = new StringBuilder("[");
-//        for (List<T> t = next; t != null; t = t.getNext())
-//            result.append(", ").append(t.getInfo());
-//        return result + "]";
-//    }
-
-//    @Override
-//    public String toString() {
-//        return "LinkedStack{" +
-//                "next=" + next +
-//                '}';
 //    }
 }
