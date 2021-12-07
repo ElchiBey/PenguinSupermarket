@@ -2,13 +2,9 @@ package pgdp.collections;
 
 public class StackConnector<T> implements DataStructureConnector<T>{
 
-    private LinkedStack<T> stack;
+    private Stack<T> stack;
 
-    public StackConnector() {
-        this.stack = null;
-    }
-
-    public StackConnector(LinkedStack<T> stack) {
+    public StackConnector(Stack<T> stack) {
         this.stack = stack;
     }
 
@@ -25,5 +21,12 @@ public class StackConnector<T> implements DataStructureConnector<T>{
     @Override
     public T removeNextElement() {
         return stack.pop();
+    }
+
+    @Override
+    public String toString() {
+        return "StackConnector{" +
+                "stack=" + stack +
+                '}';
     }
 }

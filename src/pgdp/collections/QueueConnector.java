@@ -2,7 +2,7 @@ package pgdp.collections;
 
 public class QueueConnector<T> implements DataStructureConnector<T> {
 
-    private LinkedQueue<T> queue;
+    private Queue<T> queue;
 
     public QueueConnector(LinkedQueue<T> queue) {
         this.queue = queue;
@@ -15,11 +15,19 @@ public class QueueConnector<T> implements DataStructureConnector<T> {
 
     @Override
     public void addElement(T element) {
-        queue.enqueue(element);
+//        queue = new LinkedQueue<T>();
+//        queue.enqueue(element);
     }
 
     @Override
     public T removeNextElement() {
         return queue.dequeue();
     }
+
+//    @Override
+//    public String toString() {
+//        return "QueueConnector{" +
+//                "queue=" + queue +
+//                '}';
+//    }
 }
