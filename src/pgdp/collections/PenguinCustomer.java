@@ -9,7 +9,7 @@ public class PenguinCustomer {
     public PenguinCustomer(String name, int initialMoney) {
         this.name = name;
         this.cash = initialMoney;
-        if(this.name==null || this.cash<0) throw new IllegalArgumentException();
+        if(this.name==null || this.cash<0) ExceptionUtil.illegalArgument("penguins cannot have debts");
         this.product = new LinkedStack<>();
     }
 
