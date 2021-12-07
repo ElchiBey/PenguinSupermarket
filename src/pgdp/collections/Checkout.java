@@ -24,20 +24,16 @@ public class Checkout {
         return queue;
     }
 
-    public int queueLength(){
+    public int queueLength() {
         return queue.toString().length();
     }
 
-    public void serveNextCustomer(){
-        if(queue!=null){
+    public void serveNextCustomer() {
+        if (queue != null) {
             int cost = 0;
-            while(queue.dequeue().getProducts()!=null){
-                cost += bandBeforeCashier.dequeue().getPrice();
-                bandBeforeCashier.enqueue((FishyProduct) queue.dequeue().getProducts());
-            }
-            while (bandBeforeCashier.dequeue()!=null) {
-                bandAfterCashier.enqueue(bandBeforeCashier.dequeue());
-            }
+            cost += bandBeforeCashier.dequeue().getPrice();
+            bandBeforeCashier.enqueue((FishyProduct) queue.dequeue().getProducts());
+            bandAfterCashier.enqueue(bandBeforeCashier.dequeue());
             queue.dequeue().takeAllProductsFromBand((bandAfterCashier));
             queue.dequeue().pay(cost);
             queue.dequeue();
