@@ -4,7 +4,7 @@ public class QueueConnector<T> implements DataStructureConnector<T> {
 
     private Queue<T> queue;
 
-    public QueueConnector(LinkedQueue<T> queue) {
+    public QueueConnector(Queue<T> queue) {
         this.queue = queue;
     }
 
