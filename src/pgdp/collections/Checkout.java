@@ -37,6 +37,7 @@ public class Checkout {
                 cost += bandAfterCashier.dequeue().getPrice();
             }
             queue.dequeue().takeAllProductsFromBand((bandAfterCashier));
+            if(queue.dequeue().getMoney()<cost) ExceptionUtil.illegalArgument("penguins cannot have debts");
             queue.dequeue().pay(cost);
             queue.dequeue();
         }
