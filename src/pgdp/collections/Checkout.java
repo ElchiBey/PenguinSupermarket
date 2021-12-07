@@ -40,6 +40,7 @@ public class Checkout {
             }
             queue.dequeue().takeAllProductsFromBand((bandAfterCashier));
             queue.dequeue().pay(cost);
+            queue.dequeue();
         }
     }
 
