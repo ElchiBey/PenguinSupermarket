@@ -21,7 +21,7 @@ public class PenguinCustomer {
         return money;
     }
 
-    public Stack<FishyProduct> getProduct() {
+    public Stack<FishyProduct> getProducts() {
         return products;
     }
 
@@ -44,7 +44,7 @@ public class PenguinCustomer {
     }
 
     public void pay(int value) {
-        if(value<0 || money < value) ExceptionUtil.illegalArgument("penguins cannot have debts");
+        if(value < 0 || money < value) ExceptionUtil.illegalArgument("penguins cannot have debts");
         money -= value;
     }
 
