@@ -48,6 +48,10 @@ public class PenguinCustomer {
         money -= value;
     }
 
+    public void goToCheckout(PenguinSupermarket checkout) {
+        checkout.getCheckoutWithSmallestQueue().clone();
+    }
+
     @Override
     public String toString() {
         return "PenguinCustomer{" +
