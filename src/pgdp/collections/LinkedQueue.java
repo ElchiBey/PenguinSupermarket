@@ -37,8 +37,8 @@ public class LinkedQueue<T> implements Queue<T>{
 
     @Override
     public T dequeue() {
-        T result = first.getInfo();
         if(first==null) return null;
+        T result = first.getInfo();
         if(last == first) last = null;
         first = first.getNext();
         return result;
