@@ -26,12 +26,12 @@ public class LinkedStack<T> implements Stack<T>{
     }
 
     @Override
-    public void push(T bolo) {
+    public void push(T bolo) { //folien - pg409
         next = new List<T>(bolo,next);
     }
 
     @Override
-    public T pop() {
+    public T pop() { //folien - pg409
         if(next==null) return null;
         T result = next.getInfo();
         next = next.getNext();

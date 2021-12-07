@@ -27,7 +27,7 @@ public class LinkedQueue<T> implements Queue<T>{
     }
 
     @Override
-    public void enqueue(T bolo) {
+    public void enqueue(T bolo) { //folien - pg438
         if(first==null) first = last = new List<T>(bolo);
         else {
             last.setNext(new List<T>(bolo));
@@ -36,11 +36,11 @@ public class LinkedQueue<T> implements Queue<T>{
     }
 
     @Override
-    public T dequeue() {
-//        if(first==null) return null;
-//        T result = first.getInfo();
-//        if(last == first) last = null;
-//        first = first.getNext();
+    public T dequeue() { //folien - pg438
+        if(first==null) return null;
+        T result = first.getInfo();
+        if(last == first) last = null;
+        first = first.getNext();
         return null;
     }
 
