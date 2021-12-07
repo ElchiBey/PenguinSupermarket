@@ -4,7 +4,7 @@ public class PenguinCustomer {
 
     private final String name;
     private int cash;
-    private Stack<FishyProduct> product;
+    private final Stack<FishyProduct> product;
 
     public PenguinCustomer(String name, int initialMoney) {
         this.name = name;
