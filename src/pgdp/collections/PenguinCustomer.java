@@ -44,7 +44,7 @@ public class PenguinCustomer {
     }
 
     public void pay(int value) {
-        if(value<0 || money < value) throw new IllegalArgumentException();
+        if(value<0 || money < value) ExceptionUtil.illegalArgument("penguins cannot have debts");
         money -= value;
     }
 
