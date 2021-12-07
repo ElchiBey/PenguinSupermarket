@@ -2,11 +2,14 @@ package pgdp.collections;
 
 public class Checkout {
 
-    private PenguinCustomer queue;
+    private Queue<PenguinCustomer> queue;
     private Queue<FishyProduct> bandBeforeCashier;
     private Queue<FishyProduct> bandAfterCashier;
 
     public Checkout() {
+        this.queue = new LinkedQueue<>();
+        this.bandBeforeCashier = new LinkedQueue<>();
+        this.bandAfterCashier = new LinkedQueue<>();
     }
 
     public Queue<FishyProduct> getBandAfterCashier() {
@@ -17,7 +20,7 @@ public class Checkout {
         return bandBeforeCashier;
     }
 
-    public PenguinCustomer getQueue() {
+    public Queue<PenguinCustomer> getQueue() {
         return queue;
     }
 
@@ -26,9 +29,18 @@ public class Checkout {
     }
 
     public void serveNextCustomer(){
-        queue.placeAllProductsOnBand(bandBeforeCashier);
-        queue.placeAllProductsOnBand(bandAfterCashier);
-        queue.pay(queue.getMoney());
+        if(queue!=null){
+            int cost = 0;
+            while(queue.dequeue().getProducts()!=null){
+                cost += bandBeforeCashier.dequeue().getPrice();
+                bandBeforeCashier.enqueue((FishyProduct) queue.dequeue().getProducts());
+            }
+            while (bandBeforeCashier.dequeue()!=null) {
+                bandAfterCashier.enqueue(bandBeforeCashier.dequeue());
+            }
+            queue.dequeue().takeAllProductsFromBand((bandAfterCashier));
+            queue.dequeue().pay(cost);
+        }
     }
 
     @Override
