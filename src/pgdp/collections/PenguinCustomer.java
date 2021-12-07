@@ -2,14 +2,15 @@ package pgdp.collections;
 
 public class PenguinCustomer {
 
-    private String name;
+    private final String name;
     private int cash;
     private Stack<FishyProduct> product;
 
-    public PenguinCustomer(String name, int cash, Stack<FishyProduct> product) {
+    public PenguinCustomer(String name, int initialMoney) {
         this.name = name;
-        this.cash = cash;
-        this.product = product;
+        this.cash = initialMoney;
+        if(this.name==null || this.cash<0) throw new IllegalArgumentException();
+        this.product = new LinkedStack<>();
     }
 
     public String getName() {
@@ -29,12 +30,22 @@ public class PenguinCustomer {
     }
 
     public void placeAllProductsOnBand(Queue<FishyProduct> allProducts) {
-        while(!product.isEmpty())
-        allProducts.enqueue(product.pop());
+        StackConnector<FishyProduct> produqtebi = new StackConnector<>(product);
+        QueueConnector<FishyProduct> daxli = new QueueConnector<>(allProducts);
+        DataStructureLink<FishyProduct> sayideli = new DataStructureLink<>(produqtebi,daxli);
+        sayideli.moveAllFromAToB();
     }
 
-    public void takeAllProductsFromBand(Queue<FishyProduct> allProducts){
-        
+    public void takeAllProductsFromBand(Queue<FishyProduct> allProducts) {
+        StackConnector<FishyProduct> produqtebi = new StackConnector<>(product);
+        QueueConnector<FishyProduct> daxli = new QueueConnector<>(allProducts);
+        DataStructureLink<FishyProduct> nayidi = new DataStructureLink<>(daxli,produqtebi);
+        nayidi.moveAllFromAToB();
+    }
+
+    public void pay(int value) {
+        if(value<0 || cash< value) throw new IllegalArgumentException();
+        cash -= value;
     }
 
     @Override
