@@ -12,14 +12,6 @@ public class LinkedStack<T> implements Stack<T>{
         this.next = next;
     }
 
-    public List<T> getNext() {
-        return next;
-    }
-
-    public void setNext(List<T> next) {
-        this.next = next;
-    }
-
     @Override
     public int size() {
         int result = 0;
