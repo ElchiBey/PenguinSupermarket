@@ -41,7 +41,7 @@ public class LinkedQueue<T> implements Queue<T>{
 //        T result = first.getInfo();
 //        if(last == first) last = null;
 //        first = first.getNext();
-//        return result;
+        return null;
     }
 
 //    @Override
