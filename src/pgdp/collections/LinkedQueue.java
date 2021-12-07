@@ -35,14 +35,14 @@ public class LinkedQueue<T> implements Queue<T>{
         }
     }
 
-//    @Override
-//    public T dequeue() {
+    @Override
+    public T dequeue() {
 //        if(first==null) return null;
 //        T result = first.getInfo();
 //        if(last == first) last = null;
 //        first = first.getNext();
 //        return result;
-//    }
+    }
 
 //    @Override
 //    public String toString() {
