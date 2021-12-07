@@ -11,7 +11,6 @@ public class DataStructureLink<T> {
 
     public boolean moveNextFromAToB() {
         if(firstConn.hasNextElement()){
-            firstConn.removeNextElement();
             secondConn.addElement(firstConn.removeNextElement());
             return true;
         }
@@ -20,7 +19,6 @@ public class DataStructureLink<T> {
 
     public void moveAllFromAToB() {
         while(firstConn.hasNextElement()){
-            firstConn.removeNextElement();
             secondConn.addElement(firstConn.removeNextElement());
         }
     }
