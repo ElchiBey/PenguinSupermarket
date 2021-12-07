@@ -15,8 +15,7 @@ public class QueueConnector<T> implements DataStructureConnector<T> {
 
     @Override
     public void addElement(T element) {
-//        queue = new LinkedQueue<T>();
-//        queue.enqueue(element);
+        queue.enqueue(element);
     }
 
     @Override
