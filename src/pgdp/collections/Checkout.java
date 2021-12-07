@@ -29,11 +29,11 @@ public class Checkout {
     }
 
     public void serveNextCustomer() {
-        if (queue != null) {
+        while (queue != null) {
             int cost = 0;
-            cost += bandBeforeCashier.dequeue().getPrice();
             bandBeforeCashier.enqueue((FishyProduct) queue.dequeue().getProducts());
             bandAfterCashier.enqueue(bandBeforeCashier.dequeue());
+            cost += bandAfterCashier.dequeue().getPrice();
             queue.dequeue().takeAllProductsFromBand((bandAfterCashier));
             queue.dequeue().pay(cost);
             queue.dequeue();
