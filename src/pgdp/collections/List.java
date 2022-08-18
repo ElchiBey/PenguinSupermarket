@@ -32,9 +32,9 @@ public class List<T> {
 
     @Override
     public String toString() {
-        String result = "[" + info;
+        StringBuilder result = new StringBuilder("[" + info);
         for (List<T> t = next; t != null; t = t.next)
-            result = result + ", " + t.info;
+            result.append(", ").append(t.info);
         return result + "]";
     }
 
