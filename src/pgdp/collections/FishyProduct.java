@@ -6,7 +6,8 @@ public class FishyProduct {
     private final int price;
 
     public FishyProduct(String name, int price) {
-        if(name==null || price<=0) throw new IllegalArgumentException("penguins don’t give away anything, especially food");
+        if (name == null || price <= 0)
+            throw new IllegalArgumentException("penguins don’t give away anything, especially food");
         this.name = name;
         this.price = price;
     }
