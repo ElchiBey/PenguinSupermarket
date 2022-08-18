@@ -1,6 +1,6 @@
 package pgdp.collections;
 
-public class LinkedStack<T> implements Stack<T>{
+public class LinkedStack<T> implements Stack<T> {
 
     private List<T> next;
 
@@ -8,44 +8,33 @@ public class LinkedStack<T> implements Stack<T>{
         next = null;
     }
 
-    public LinkedStack(List<T> next){
+    public LinkedStack(List<T> next) {
         this.next = next;
     }
 
     @Override
     public int size() {
         int result = 0;
-        for(List<T> t=next; t!=null; t=t.getNext())
+        for (List<T> t = next; t != null; t = t.getNext())
             result++;
         return result;
     }
 
     @Override
     public boolean isEmpty() {
-        return (next==null);
+        return next == null;
     }
 
     @Override
-    public void push(T bolo) { //folien - pg409
-        next = new List<T>(bolo,next);
+    public void push(T bolo) {
+        next = new List<T>(bolo, next);
     }
 
     @Override
-    public T pop() { //folien - pg409
-        if(next==null) return null;
+    public T pop() {
+        if (next == null) return null;
         T result = next.getInfo();
         next = next.getNext();
         return result;
     }
-
-//    public String toString(){
-//        return next.toString();
-//    }
-
-//    @Override
-//    public String toString() {
-//        return "LinkedStack{" +
-//                "next=" + next +
-//                '}';
-//    }
 }
