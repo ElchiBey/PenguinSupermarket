@@ -1,4 +1,4 @@
-# PenguinSupermarket, one of my homework about penguins in the market.
+# PenguinSupermarket, code about penguins in the market.
 ```
 Costumers can add product into their basket. Then they will enter the queue of any register(checkout), 
 also they are able to know chekouts with the lowest queue.After that, they wait their time to place all
